@@ -14,7 +14,9 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const fetchWeatherData = (location) => {
-    fetch(`http://localhost:3000/weather?location=${location}`)
+    const baseUrl = window.location.origin;
+
+    fetch(`${baseUrl}/weather?location=${location}`)
       .then((res) => {
         return res.json();
       })
