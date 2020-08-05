@@ -17,8 +17,9 @@ const forecast = (lat, lng, callback) => {
     const deg = body.current.temperature;
     const feelsDeg = body.current.feelslike;
     const description = body.current.weather_descriptions[0];
+    const pressure = body.current.pressure;
 
-    const forecastData = `${description}. It is currently ${deg} degrees out, and it feels like ${feelsDeg} degrees.`;
+    const forecastData = `${description}. It is currently ${deg} degrees out, and it feels like ${feelsDeg} degrees. The pressure is ${pressure}hPa`;
 
     callback(undefined, forecastData);
   });
